@@ -1,0 +1,21 @@
+Package: buildingpermitsurvey
+Type: Package
+Title: Get Data From Building Permit Survey
+Version: 0.0.1
+Authors@R: 
+    person("Kevin", "Schaul", , "kevin.schaul@gmail.com", role = c("aut", "cre"))
+Description: Provides uniformly formatted data from the U.S. Census Bureau's
+    Building Permits Survey
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Imports: 
+    dplyr,
+    magrittr,
+    readr,
+    stringr,
+    tibble
+RoxygenNote: 7.2.0
