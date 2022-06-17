@@ -5,7 +5,7 @@ Version: 0.0.1
 Authors@R: 
     person("Kevin", "Schaul", , "kevin.schaul@gmail.com", role = c("aut", "cre"))
 Description: Provides uniformly formatted data from the U.S. Census Bureau's
-    Building Permits Survey
+    Building Permits Survey.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -16,6 +16,7 @@ Imports:
     dplyr,
     magrittr,
     readr,
+    rlang,
     stringr,
-    tibble
+    tidyselect
 RoxygenNote: 7.2.0

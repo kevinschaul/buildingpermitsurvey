@@ -7,7 +7,7 @@
 by_msa(year)
 }
 \arguments{
-\item{year}{}
+\item{year}{Survey year to get}
 }
 \description{
 Get BPS data by metropolitan statistical area

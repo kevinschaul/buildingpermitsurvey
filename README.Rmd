@@ -31,16 +31,26 @@ You can install the development version of buildingpermitsurvey like so:
 devtools::install_github('kevinschaul/buildingpermitsurvey')
 ```
 
+## Usage
+
+```{r usage}
+library(buildingpermitsurvey)
+```
+
 ## What's implemented
+
+### BPS by county
+
+Years 2000-2021, annual figures
+
+```{r county}
+by_county(2021)
+```
 
 ### BPS by metropolitan statistical area
 
-Years 2004-2014
+Years 2004-2014, annual figures
 
-```{r example}
-library(buildingpermitsurvey)
-
-msa_2004 <- by_msa(2004)
-msa_2004
+```{r msa}
+by_msa(2004)
 ```
-
