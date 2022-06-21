@@ -44,7 +44,8 @@ library(buildingpermitsurvey)
 Years 2000-2021, annual figures
 
 ```{r county}
-head(bps_annual_by_county)
+data("bps_annual_by_county")
+dplyr::glimpse(bps_annual_by_county)
 ```
 
 ### BPS by metropolitan statistical area
@@ -52,5 +53,6 @@ head(bps_annual_by_county)
 Years 2004-2014, annual figures
 
 ```{r msa}
-head(bps_annual_by_msa)
+data("bps_annual_by_msa")
+dplyr::glimpse(bps_annual_by_msa)
 ```
