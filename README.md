@@ -34,27 +34,49 @@ library(buildingpermitsurvey)
 Years 2000-2021, annual figures
 
 ``` r
-by_county(2021)
-#> # A tibble: 749 × 33
-#>     year fips  name           total_units units_1 units_2 units_3_4 units_5_more
-#>    <dbl> <chr> <chr>                <dbl>   <dbl>   <dbl>     <dbl>        <dbl>
-#>  1  2021 01001 Autauga County         277     277       0         0            0
-#>  2  2021 01007 Bibb County             10      10       0         0            0
-#>  3  2021 01009 Blount County           26      24       2         0            0
-#>  4  2021 01021 Chilton County         150     150       0         0            0
-#>  5  2021 01073 Jefferson Cou…        2118    1569       2         3          544
-#>  6  2021 01075 Lamar County             0       0       0         0            0
-#>  7  2021 01081 Lee County            1851    1487      42        28          294
-#>  8  2021 01083 Limestone Cou…         631     473       6        26          126
-#>  9  2021 01089 Madison County        5587    3794       2         0         1791
-#> 10  2021 01113 Russell County         186     172      14         0            0
-#> # … with 739 more rows, and 25 more variables: units_rep_1 <dbl>,
-#> #   units_rep_2 <dbl>, units_rep_3_4 <dbl>, units_rep_5_more <dbl>,
-#> #   value_1 <dbl>, value_2 <dbl>, value_3_4 <dbl>, value_5_more <dbl>,
-#> #   value_rep_1 <dbl>, value_rep_2 <dbl>, value_rep_3_4 <dbl>,
-#> #   value_rep_5_more <dbl>, buildings_1 <dbl>, buildings_2 <dbl>,
-#> #   buildings_3_4 <dbl>, buildings_5_more <dbl>, buildings_rep_1 <dbl>,
-#> #   buildings_rep_2 <dbl>, buildings_rep_3_4 <dbl>, …
+head(bps_annual_by_county)
+#>   year  fips                       name total_units units_1 units_2 units_3_4
+#> 1 2000 01001             Autauga County         165     165       0         0
+#> 2 2000 01081                 Lee County         574     330     132        18
+#> 3 2000 01113             Russell County         358     108       2         0
+#> 4 2000 02000    Alaska Balance of State          72      72       0         0
+#> 5 2000 02013     Aleutians East Borough           1       1       0         0
+#> 6 2000 02016 Aleutians West Census Area          51      19       0         0
+#>   units_5_more units_rep_1 units_rep_2 units_rep_3_4 units_rep_5_more  value_1
+#> 1            0         165           0             0                0  9854805
+#> 2           94         330         132            18               94 46679876
+#> 3          248         108           2             0              248  8218417
+#> 4            0          NA          NA            NA               NA 12544724
+#> 5            0           0           0             0                0    85000
+#> 6           32          19           0             0               32  2732002
+#>   value_2 value_3_4 value_5_more value_rep_1 value_rep_2 value_rep_3_4
+#> 1       0         0            0     9854805           0             0
+#> 2 6717524   1452440      4717784    46679876     6717524       1452440
+#> 3   90000         0     13499064     8218417       90000             0
+#> 4       0         0            0          NA          NA            NA
+#> 5       0         0            0           0           0             0
+#> 6       0         0      4584720     2732002           0             0
+#>   value_rep_5_more buildings_1 buildings_2 buildings_3_4 buildings_5_more
+#> 1                0         165           0             0                0
+#> 2          4717784         330          66             6                9
+#> 3         13499064         108           1             0               13
+#> 4               NA          72           0             0                0
+#> 5                0           1           0             0                0
+#> 6          4584720          19           0             0                4
+#>   buildings_rep_1 buildings_rep_2 buildings_rep_3_4 buildings_rep_5_more
+#> 1             165               0                 0                    0
+#> 2             330              66                 6                    9
+#> 3             108               1                 0                   13
+#> 4              NA              NA                NA                   NA
+#> 5               0               0                 0                    0
+#> 6              19               0                 0                    4
+#>   survey_date fips_state fips_county region_code division_code
+#> 1      200012         01         001           3             6
+#> 2      200012         01         081           3             6
+#> 3      200012         01         113           3             6
+#> 4      200012         02         000           4             9
+#> 5      200012         02         013           4             9
+#> 6      200012         02         016           4             9
 ```
 
 ### BPS by metropolitan statistical area
@@ -62,19 +84,26 @@ by_county(2021)
 Years 2004-2014, annual figures
 
 ``` r
-by_msa(2004)
-#> # A tibble: 363 × 8
-#>    name      total_units units_1 units_2 units_3_4 units_5_more structures_unit…
-#>    <chr>     <chr>       <chr>     <dbl>     <dbl>        <dbl>            <dbl>
-#>  1 Abilene,… 291         283           8         0            0                0
-#>  2 Akron, OH 2934        2480         70       102          282               23
-#>  3 Albany, … 873         671          52        32          118               15
-#>  4 Albany-S… 3268        2608         42         4          614               61
-#>  5 Albuquer… 7455        7065          0        66          324               16
-#>  6 Alexandr… 685         683           2         0            0                0
-#>  7 Allentow… 4612        4461         18        40           93               10
-#>  8 Altoona,… 496         293          18         0          185                9
-#>  9 Amarillo… 1010        737           6         0          267               13
-#> 10 Ames, IA  736         317          18         3          398               17
-#> # … with 353 more rows, and 1 more variable: note <chr>
+head(bps_annual_by_msa)
+#>   year                        name total_units units_1 units_2 units_3_4
+#> 1 2004                 Abilene, TX         291     283       8         0
+#> 2 2004                   Akron, OH        2934    2480      70       102
+#> 3 2004                  Albany, GA         873     671      52        32
+#> 4 2004 Albany-Schenectady-Troy, NY        3268    2608      42         4
+#> 5 2004             Albuquerque, NM        7455    7065       0        66
+#> 6 2004              Alexandria, LA         685     683       2         0
+#>   units_5_more structures_units_5_more
+#> 1            0                       0
+#> 2          282                      23
+#> 3          118                      15
+#> 4          614                      61
+#> 5          324                      16
+#> 6            0                       0
+#>                                                                                note
+#> 1                                                                              <NA>
+#> 2                                                                              <NA>
+#> 3                                                                              <NA>
+#> 4                                                                              <NA>
+#> 5 Metropolitan areas where all permit offices are\n    requested to report monthly.
+#> 6                                                                              <NA>
 ```
